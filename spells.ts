@@ -8,9 +8,8 @@ export const spells: Spell[] = [
   { name: "LaTeX" },
   { name: "Neovim" },
   { name: "Pornhub" },
-  { name: "VSCode" },
-  { name: "YouTube" },
-  { name: "WebStorm" },
   { name: "PhpStorm" },
-  { name: "Discord" },
+  { name: "VSCode" },
+  { name: "WebStorm" },
+  { name: "YouTube" },
 ];
