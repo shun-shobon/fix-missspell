@@ -10,4 +10,7 @@ export const spells: Spell[] = [
   { name: "Pornhub" },
   { name: "VSCode" },
   { name: "YouTube" },
+  { name: "WebStorm" },
+  { name: "PhpStorm" },
+  { name: "Discord" },
 ];
