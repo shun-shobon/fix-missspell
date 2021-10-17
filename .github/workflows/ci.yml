@@ -29,4 +29,4 @@ jobs:
           export_default_credentials: true
       - run: |
           gcloud components install beta
-          gcloud beta compute instance-groups managed rolling-action start-update vm-group-${{ secrets.GCP_NAME }} --quiet --type='proactive' --max-surge=0 --max-unavailable=1 --min-ready=0 --minimal-action='replace' --most-disruptive-allowed-action='replace' --replacement-method='substitute' --version=template=projects/${{ secrets.GCP_PROJECT }}/global/instanceTemplates/vm-temp-${{ secrets.GCP_NAME }} --zone=${{ secrets.GCE_RESION }}
+          gcould beta compute instance-groups managed rolling-action replace vm-group-${{ secrets.GCP_NAME }} --max-surge=0 --max-unavailable=0 --min-ready=0 --replacement-method=substitute --zone=${{ secrets.GCE_RESION }}
