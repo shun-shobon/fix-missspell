@@ -4,6 +4,7 @@ export type Spell = {
 
 export const spells: Spell[] = [
   { name: "GitHub" },
+  { name: "GitLab" },
   { name: "IntelliJ" },
   { name: "LaTeX" },
   { name: "Neovim" },
