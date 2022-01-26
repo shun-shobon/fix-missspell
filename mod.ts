@@ -2,6 +2,10 @@ import { config, startBot } from "./deps.ts";
 
 import { spells } from "./spells.ts";
 
+function dedup<T>(array: Array<T>): Array<T> {
+  return [...new Set(array)];
+}
+
 async function main() {
   config({ export: true, safe: true });
 
@@ -16,7 +20,7 @@ async function main() {
       async messageCreate(message) {
         if (message.isBot) return;
 
-        const missings = spells.flatMap((spell) => {
+        const missings = dedup(spells.flatMap((spell) => {
           const regex = new RegExp(spell.name, "ig");
 
           return Array.from(message.content.matchAll(regex))
@@ -25,7 +29,7 @@ async function main() {
               (match) => match !== spell.name && match !== match.toLowerCase()
             )
             .map((match) => `${spell.name}. Not ${match}.`);
-        });
+        }));
 
         if (missings.length === 0) return;
 
