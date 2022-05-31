@@ -1,4 +1,4 @@
-FROM denoland/deno AS build
+FROM denoland/deno:1.22.1 AS build
 
 WORKDIR /build
 
@@ -6,13 +6,16 @@ COPY deps.ts ./
 RUN deno cache deps.ts
 
 COPY . ./
-RUN deno bundle mod.ts mod.js
+RUN deno compile --unstable --output=app --allow-net=discord.com,gateway.discord.gg --allow-env=DISCORD_TOKEN mod.ts
+RUN chmod 755 app
 
 
-FROM denoland/deno:distroless
+FROM gcr.io/distroless/cc
 
 WORKDIR /app
 
-COPY --from=build /build/mod.js ./
+USER nonroot
 
-CMD ["run", "--allow-net=discord.com,gateway.discord.gg", "--allow-env", "--allow-read=.env,.env.example,.env.defaults", "mod.js"]
+COPY --from=build /build/app ./
+
+CMD ["./app"]

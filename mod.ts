@@ -1,4 +1,4 @@
-import { config, startBot } from "./deps.ts";
+import { startBot } from "./deps.ts";
 
 import { spells } from "./spells.ts";
 
@@ -7,11 +7,10 @@ function dedup<T>(array: Array<T>): Array<T> {
 }
 
 async function main() {
-  config({ export: true, safe: true });
-
   const token = Deno.env.get("DISCORD_TOKEN");
-  if (token === undefined)
+  if (token === undefined) {
     throw new Error("DISCORD_TOKEN is not defined in environment variable.");
+  }
 
   await startBot({
     token,
@@ -26,7 +25,7 @@ async function main() {
           return Array.from(message.content.matchAll(regex))
             .map(([match]) => match)
             .filter(
-              (match) => match !== spell.name && match !== match.toLowerCase()
+              (match) => match !== spell.name && match !== match.toLowerCase(),
             )
             .map((match) => `${spell.name}. Not ${match}.`);
         }));
