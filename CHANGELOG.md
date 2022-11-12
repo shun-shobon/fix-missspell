@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/shun-shobon/fix-missspell/compare/1.0.0...1.1.0) (2022-11-12)
+
+
+### Features
+
+* Upgrade deno version ([7b8b7db](https://github.com/shun-shobon/fix-missspell/commit/7b8b7db71f233ca30a954142e24cc5eda59b1b0b))
+
 ## 1.0.0 (2022-11-12)
 
 
