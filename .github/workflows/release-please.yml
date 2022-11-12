@@ -1,0 +1,20 @@
+name: release-please
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - id: release
+        uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: simple
+          include-v-in-tag: false
+      - if: ${{ steps.release.outputs.release_created }}
+        uses: ./.github/actions/release
+        with:
+          tag: ${{ steps.release.outputs.tag_name }}
