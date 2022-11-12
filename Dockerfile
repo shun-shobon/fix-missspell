@@ -1,4 +1,4 @@
-FROM denoland/deno:1.22.1 AS build
+FROM denoland/deno:1.27.2 AS build
 
 WORKDIR /build
 
