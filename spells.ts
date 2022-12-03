@@ -10,6 +10,7 @@ export const spells: Spell[] = [
   { name: "JetBrains" },
   { name: "Keybase" },
   { name: "LaTeX" },
+  { name: "MacBook" },
   { name: "macOS" },
   { name: "Neovim" },
   { name: "Pornhub" },
