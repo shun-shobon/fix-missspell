@@ -20,4 +20,5 @@ export const spells: Spell[] = [
   { name: "WireGuard" },
   { name: "Wireshark" },
   { name: "YouTube" },
+  { name: "YubiKey" },
 ];
