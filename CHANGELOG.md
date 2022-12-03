@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/shun-shobon/fix-missspell/compare/1.1.0...1.2.0) (2022-12-03)
+
+
+### Features
+
+* Add `MacBook` ([5afbe0d](https://github.com/shun-shobon/fix-missspell/commit/5afbe0da080714bff5fc5157eba1701a41439536))
+* Add `YubiKey` ([943b078](https://github.com/shun-shobon/fix-missspell/commit/943b07847609b7829cbacbcac59d36694e1e67ab))
+
 ## [1.1.0](https://github.com/shun-shobon/fix-missspell/compare/1.0.0...1.1.0) (2022-11-12)
 
 
