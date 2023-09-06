@@ -23,7 +23,7 @@ runs:
         registry: ghcr.io
         username: ${{ github.actor }}
         password: ${{ github.token }}
-    - uses: docker/build-push-action@v3
+    - uses: docker/build-push-action@v4
       with:
         push: true
         labels: |
