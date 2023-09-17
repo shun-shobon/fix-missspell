@@ -1,4 +1,4 @@
-name: release-please
+name: Release Please
 
 on:
   push:
@@ -8,17 +8,33 @@ on:
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      major: ${{ steps.release.outputs.major }}
+      minor: ${{ steps.release.outputs.minor }}
+      patch: ${{ steps.release.outputs.patch }}
     steps:
-      - uses: actions/checkout@v4
-      - id: release
+      - name: Setup | GitHub App
+        id: token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+
+      - name: Run | Release Please
+        id: release
         uses: google-github-actions/release-please-action@v3
         with:
+          token: ${{ steps.token.outputs.token }}
           release-type: simple
           include-v-in-tag: false
-      - if: ${{ steps.release.outputs.release_created }}
-        uses: ./.github/actions/release
-        with:
-          major: ${{ steps.release.outputs.major }}
-          minor: ${{ steps.release.outputs.minor }}
-          patch: ${{ steps.release.outputs.patch }}
-          sha: ${{ steps.release.outputs.sha }}
+
+  release:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created }}
+    uses: ./.github/workflows/release.yml
+    secrets: inherit
+    with:
+      major: ${{ needs.release-please.outputs.major }}
+      minor: ${{ needs.release-please.outputs.minor }}
+      patch: ${{ needs.release-please.outputs.patch }}
