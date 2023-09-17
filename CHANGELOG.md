@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.0.0](https://github.com/shun-shobon/fix-missspell/compare/1.2.0...2.0.0) (2023-09-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* Switch runtime from Deno to Bun
+
+### Features
+
+* Add logging ([b7344d2](https://github.com/shun-shobon/fix-missspell/commit/b7344d2e20dbadb31d25e0fb529aafa50dc30a15))
+* Add os signal handler ([fd8b0b6](https://github.com/shun-shobon/fix-missspell/commit/fd8b0b670587fe92621e54ef6ecc5c674c5f1aa9))
+* Switch runtime from Deno to Bun ([dcd9e4a](https://github.com/shun-shobon/fix-missspell/commit/dcd9e4a8844dc7a86c7459f49aeab99564edb945))
+
 ## [1.2.0](https://github.com/shun-shobon/fix-missspell/compare/1.1.0...1.2.0) (2022-12-03)
 
 
