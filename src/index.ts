@@ -1,3 +1,5 @@
+#!/usr/bin/env bun
+
 import { Client } from "discord.js";
 import { spells } from "./spells";
 

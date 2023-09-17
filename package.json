@@ -1,9 +1,12 @@
 {
   "name": "fix-missspell",
-  "module": "index.ts",
+  "module": "./src/index.ts",
   "type": "module",
+  "private": true,
   "scripts": {
-    "start": "bun index.ts"
+    "start": "bun run ./dist/index.js",
+    "build": "bun run ./build.ts",
+    "dev": "bun run --watch ./index.ts"
   },
   "dependencies": {
     "discord.js": "^14.13.0"
