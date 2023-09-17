@@ -11,6 +11,10 @@ const app = new Client({
   intents: ["Guilds", "GuildMessages", "MessageContent"],
 });
 
+app.on("ready", (client) => {
+  console.log(`Logged in as ${client.user?.tag}`);
+});
+
 app.on("messageCreate", async (message) => {
   if (message.author.bot) return;
 
@@ -28,6 +32,8 @@ app.on("messageCreate", async (message) => {
   );
 
   if (missings.length === 0) return;
+
+  console.log(`Found ${missings.length} missings`);
 
   const reply = missings.join("\n");
 
