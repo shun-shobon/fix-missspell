@@ -40,4 +40,13 @@ app.on("messageCreate", async (message) => {
   await message.reply(reply);
 });
 
+async function stop() {
+  console.log("Stopping...");
+  await app.destroy();
+  process.exit(0);
+}
+
+process.on("SIGINT", stop);
+process.on("SIGTERM", stop);
+
 await app.login(Bun.env.DISCORD_TOKEN);
