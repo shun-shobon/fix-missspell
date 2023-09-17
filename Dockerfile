@@ -94,5 +94,7 @@ WORKDIR /app
 COPY --from=deps /deps/node_modules /app/node_modules
 COPY --from=build /build/dist/index.js /app
 
+USER nonroot:nonroot
+
 ENTRYPOINT ["/bun"]
 CMD ["./index.js"]
