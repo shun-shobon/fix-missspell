@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/shun-shobon/fix-missspell/compare/2.0.0...2.0.1) (2023-09-17)
+
+
+### Bug Fixes
+
+* Support arm64 ([53c52e2](https://github.com/shun-shobon/fix-missspell/commit/53c52e266065deee0706cc571054e2fe53664173))
+
 ## [2.0.0](https://github.com/shun-shobon/fix-missspell/compare/1.2.0...2.0.0) (2023-09-17)
 
 
