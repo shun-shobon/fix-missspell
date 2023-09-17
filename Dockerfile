@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # ref: https://github.com/oven-sh/bun/blob/639a12f59fc5342360c341bc9858244c107cc30e/dockerhub/Dockerfile-distroless
-FROM debian:bookworm-slim AS bun-build
+FROM debian:bookworm-slim AS bun
 
 # https://github.com/oven-sh/bun/releases
 ARG BUN_VERSION=latest
@@ -62,9 +62,7 @@ RUN apt-get update -qq \
   && bun --version
 
 
-FROM debian:bookworm-slim AS build
-
-COPY --from=bun-build /usr/local/bin/bun /usr/local/bin
+FROM bun AS build
 
 WORKDIR /build
 
@@ -75,9 +73,7 @@ COPY . /build
 RUN bun run build
 
 
-FROM debian:bookworm-slim AS deps
-
-COPY --from=bun-build /usr/local/bin/bun /usr/local/bin
+FROM bun AS deps
 
 WORKDIR /deps
 
@@ -87,7 +83,7 @@ RUN bun install --frozen-lockfile --production
 
 FROM gcr.io/distroless/base-nossl-debian12
 
-COPY --from=bun-build /usr/local/bin/bun /
+COPY --from=bun /usr/local/bin/bun /
 
 WORKDIR /app
 
