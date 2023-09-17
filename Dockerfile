@@ -88,7 +88,7 @@ COPY --from=bun /usr/local/bin/bun /
 WORKDIR /app
 
 COPY --from=deps /deps/node_modules /app/node_modules
-COPY --from=build /build/dist/index.js /app
+COPY --from=build /build/dist /app
 
 USER nonroot:nonroot
 
