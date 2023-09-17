@@ -10,9 +10,6 @@ inputs:
   patch:
     description: Patch version number
     required: true
-  sha:
-    description: Git SHA
-    required: true
 runs:
   using: composite
   steps:
@@ -32,5 +29,4 @@ runs:
           ghcr.io/${{ github.repository }}:${{ inputs.major }}.${{ inputs.minor }}.${{ inputs.patch }}
           ghcr.io/${{ github.repository }}:${{ inputs.major }}.${{ inputs.minor }}
           ghcr.io/${{ github.repository }}:${{ inputs.major }}
-          ghcr.io/${{ github.repository }}:${{ github.sha }}
           ghcr.io/${{ github.repository }}:latest
