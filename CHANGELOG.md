@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/shun-shobon/fix-missspell/compare/2.0.1...2.0.2) (2023-11-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency discord.js to ^14.14.1 ([#28](https://github.com/shun-shobon/fix-missspell/issues/28)) ([5d62281](https://github.com/shun-shobon/fix-missspell/commit/5d622819b0ca4baa5edab51ef280eca0245a2152))
+
 ## [2.0.1](https://github.com/shun-shobon/fix-missspell/compare/2.0.0...2.0.1) (2023-09-17)
 
 
