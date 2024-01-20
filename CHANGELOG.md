@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.3](https://github.com/shun-shobon/fix-missspell/compare/2.0.2...v2.0.3) (2024-01-20)
+
+
+### Bug Fixes
+
+* Update release-please ([7f05154](https://github.com/shun-shobon/fix-missspell/commit/7f05154c5785da4e2e065a7007f67df4766b70d1))
+
 ## [2.0.2](https://github.com/shun-shobon/fix-missspell/compare/2.0.1...2.0.2) (2023-11-13)
 
 
