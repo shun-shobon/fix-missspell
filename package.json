@@ -15,7 +15,7 @@
     "bun-types": "latest"
   },
   "peerDependencies": {
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.4"
   },
   "version": "2.0.3"
 }
