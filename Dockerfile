@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM registry.hub.docker.com/oven/bun:1.1.8 AS bun
+FROM registry.hub.docker.com/oven/bun:1.1.10 AS bun
 
 FROM bun AS build
 
